@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Listen — YOUNG DURAGG</title>
+<meta name="description" content="Stream YOUNG DURAGG on Spotify and Apple Music.">
+<meta name="theme-color" content="#08090c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="bg" role="presentation"></div>
+
+<header class="nav">
+  <a class="nav__brand" href="index.html">YOUNG<span>·</span>DURAGG</a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="listen.html" class="active">Listen</a>
+    <a href="follow.html">Follow</a>
+    <span class="soon">Shop<sup>soon</sup></span>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section class="page-head">
+    <p class="eyebrow">Streaming</p>
+    <h1 class="h2">Listen</h1>
+    <p class="lede">Press play wherever you're at.</p>
+  </section>
+
+  <section class="stack" aria-label="Streaming platforms">
+    <!-- replace # with your Spotify artist / album URL -->
+    <a class="link-card" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.36-.66.48-1.021.24-2.82-1.74-6.36-2.1-10.561-1.14-.418.12-.779-.18-.899-.54-.12-.42.18-.78.54-.9 4.56-1.02 8.52-.6 11.64 1.32.42.18.479.66.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.56 18.72 12.84c.361.18.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.3c-.6.18-1.2-.18-1.38-.72-.18-.6.18-1.2.72-1.38 4.26-1.26 11.28-1.02 15.721 1.62.539.3.719 1.02.42 1.56-.299.42-1.02.6-1.559.3z"/></svg>
+      <span>
+        <span class="lc-name">Spotify</span><br>
+        <span class="lc-sub">Stream on Spotify</span>
+      </span>
+      <span class="arr">→</span>
+    </a>
+
+    <!-- replace # with your Apple Music URL -->
+    <a class="link-card" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+      <span>
+        <span class="lc-name">Apple Music</span><br>
+        <span class="lc-sub">Stream on Apple Music</span>
+      </span>
+      <span class="arr">→</span>
+    </a>
+  </section>
+</main>
+
+<footer class="footer wrap">
+  <span>© <span id="yr"></span> Young Duragg</span>
+  <span class="mini">
+    <a href="index.html">Home</a>
+    <a href="follow.html">Follow</a>
+  </span>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

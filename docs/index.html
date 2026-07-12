@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>YOUNG DURAGG</title>
+<meta name="description" content="Official site of YOUNG DURAGG — South African artist. Listen, follow, and catch the Mansion Party.">
+<meta property="og:title" content="YOUNG DURAGG">
+<meta property="og:description" content="South African artist. Mansion Party coming soon.">
+<meta property="og:image" content="duragghomecover.jpg">
+<meta name="theme-color" content="#08090c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- fixed cover background -->
+<div class="bg" role="presentation"></div>
+
+<!-- ===================== SPLASH / LINKTREE ===================== -->
+<div class="splash" id="splash">
+  <div class="splash__tag">South African Artist</div>
+
+  <div class="wordmark">
+    <span class="young">Young</span>
+    <span class="duragg">Duragg</span>
+  </div>
+
+  <nav class="tree" aria-label="Quick links">
+    <a href="listen.html"><span>Listen</span><span class="arr">→</span></a>
+    <a href="follow.html"><span>Follow</span><span class="arr">→</span></a>
+    <a href="#message" data-enter><span>Message</span><span class="arr">→</span></a>
+    <span class="soon" aria-disabled="true"><span>Shop</span><span class="badge">Soon</span></span>
+  </nav>
+
+  <button class="enter" id="enterBtn" type="button" data-enter>Enter site</button>
+</div>
+
+<!-- ===================== SITE ===================== -->
+<header class="nav">
+  <a class="nav__brand" href="index.html">YOUNG<span>·</span>DURAGG</a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="index.html" class="active">Home</a>
+    <a href="listen.html">Listen</a>
+    <a href="follow.html">Follow</a>
+    <span class="soon">Shop<sup>soon</sup></span>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wordmark wordmark--fill">
+      <span class="young">Young</span>
+      <span class="duragg">Duragg</span>
+    </div>
+    <div class="hero__cta">
+      <a class="btn btn--sky" href="listen.html">Listen now</a>
+      <a class="btn" href="follow.html">Follow</a>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section class="section" id="events">
+    <div class="wrap">
+      <p class="eyebrow">Events</p>
+      <h2 class="h2">On the way</h2>
+      <div class="event">
+        <div class="event__name">Mansion Party <b>Coming Soon</b></div>
+        <div class="event__meta"><span class="dot"></span> Show dates coming soon</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MESSAGE -->
+  <section class="section" id="message">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h2 class="h2">Send a message</h2>
+      <p class="lede">Booking, features, press, or just say what's up.</p>
+
+      <!-- Formspree: replace YOUR_FORM_ID with your endpoint id -->
+      <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="text"  name="name"    placeholder="Name"  required>
+        <input type="email" name="email"   placeholder="Email" required>
+        <textarea          name="message" placeholder="Message" required></textarea>
+        <button class="btn btn--sky" type="submit">Send message</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer wrap">
+  <span>© <span id="yr"></span> Young Duragg</span>
+  <span class="mini">
+    <a href="listen.html">Listen</a>
+    <a href="follow.html">Follow</a>
+    <a href="#message">Message</a>
+  </span>
+</footer>
+
+<script>
+  // ---- splash / linktree control ----
+  const splash = document.getElementById('splash');
+  const dismiss = () => {
+    splash.classList.add('hide');
+    try { sessionStorage.setItem('duragg_seen', '1'); } catch(e){}
+  };
+  // skip splash if already seen this session (e.g. coming back from listen/follow)
+  try { if (sessionStorage.getItem('duragg_seen')) splash.classList.add('hide'); } catch(e){}
+
+  document.querySelectorAll('[data-enter]').forEach(el =>
+    el.addEventListener('click', dismiss)
+  );
+
+  // year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
